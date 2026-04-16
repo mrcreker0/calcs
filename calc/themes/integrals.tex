@@ -1,0 +1,387 @@
+\documentclass[10pt,a4paper]{article}
+
+% --- Encoding and language ---
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1,T2A]{fontenc}
+\else
+  \usepackage{fontspec}
+  \setmainfont{CMU Serif}
+\fi
+\usepackage[english,russian]{babel}
+
+% --- Math ---
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{amsthm}
+
+% --- Color blocks ---
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{theorems,breakable,skins}
+
+% --- Page settings ---
+\usepackage{geometry}
+\geometry{left=22mm,right=22mm,top=25mm,bottom=27mm,heightrounded}
+\usepackage{enumitem}
+
+% --- Colors for blocks ---
+\usepackage{xcolor}
+\definecolor{cbBlueBack}{RGB}{246,249,252}
+\definecolor{cbGreenBack}{RGB}{246,251,248}
+\definecolor{cbOrangeBack}{RGB}{252,249,242}
+\definecolor{cbPurpleBack}{RGB}{249,247,252}
+\definecolor{cbGrayBack}{RGB}{249,249,249}
+\definecolor{cbRoseBack}{RGB}{252,248,249}
+\definecolor{cbPinkBack}{RGB}{248, 240, 250}
+\definecolor{cbBlue}{RGB}{42,87,132}
+\definecolor{cbGreen}{RGB}{52,110,72}
+\definecolor{cbOrange}{RGB}{140,98,0}
+\definecolor{cbPurple}{RGB}{93,78,140}
+\definecolor{cbGray}{RGB}{80,80,80}
+\definecolor{cbRose}{RGB}{138,65,82}
+\definecolor{cbPink}{RGB}{160, 100, 170}
+
+% --- Theorems and definitions ---
+\newtheoremstyle{mystatement}{8pt}{8pt}{\itshape}{}{
+  \bfseries}{.}{\newline}{}
+\newtheoremstyle{mydefinition}{8pt}{8pt}{\normalfont}{}{
+  \bfseries}{.}{0.5em}{}
+\newtheoremstyle{myremark}{6pt}{6pt}{\normalfont}{}{
+  \bfseries}{.}{\newline}{}
+
+\theoremstyle{mystatement}
+\newtheorem*{theorem}{Теорема}
+\newtheorem*{lemma}{Лемма}
+\newtheorem*{stmt}{Утверждение}
+\newtheorem*{cor}{Следствие}
+
+\theoremstyle{mydefinition}
+\newtheorem*{definition}{Определение}
+\newtheorem*{example}{Пример}
+\newtheorem*{prop}{Свойство}
+\newtheorem*{props}{Свойства}
+\newtheorem*{examples}{Примеры}
+
+\theoremstyle{myremark}
+\newtheorem*{remark}{Замечание}
+
+% --- Colored tcolorbox blocks ---
+\tcbset{
+  enhanced, sharp corners, boxrule=0.5pt,
+  left=9pt,right=9pt,top=7pt,bottom=7pt,
+  before skip=8pt, after skip=8pt, breakable
+}
+
+\newif\ifcolorblocks
+\colorblockstrue
+
+\ifcolorblocks
+  \newcommand{\blockback}[1]{#1}
+\else
+  \newcommand{\blockback}[1]{white}
+\fi
+
+\tcolorboxenvironment{theorem}{colback=\blockback{cbBlueBack}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbBlue}}
+\tcolorboxenvironment{lemma}{colback=\blockback{cbPurpleBack}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbPurple}}
+\tcolorboxenvironment{cor}{colback=\blockback{cbPurpleBack}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbPurple}}
+\tcolorboxenvironment{definition}{colback=\blockback{cbGreenBack}, colframe=cbGreen!55!cbGray, borderline west={1.6pt}{0pt}{cbGreen}}
+\tcolorboxenvironment{example}{colback=\blockback{cbOrangeBack}, colframe=cbOrange!45!cbGray, borderline west={1.6pt}{0pt}{cbOrange}}
+\tcolorboxenvironment{remark}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}}
+\tcolorboxenvironment{stmt}{colback=\blockback{cbRoseBack}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbRose}}
+\tcolorboxenvironment{prop}{colback=\blockback{cbPinkBack!50}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbPink}}
+\tcolorboxenvironment{props}{colback=\blockback{cbPinkBack!50}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbPink}}
+\tcolorboxenvironment{examples}{colback=\blockback{cbOrangeBack}, colframe=cbOrange!45!cbGray, borderline west={1.6pt}{0pt}{cbOrange}}
+
+\newenvironment{examplelist}[1][]{%
+  \begin{examples}#1
+  \par\noindent
+  \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=6pt, topsep=2pt]
+}{%
+  \end{enumerate}
+  \end{examples}
+}
+
+\newenvironment{proplist}[1][]{%
+  \begin{props}
+  \par\noindent
+  \begin{enumerate}[label=\textbf{\arabic*.}, leftmargin=*, itemsep=6pt, topsep=2pt]
+}{%
+  \end{enumerate}
+  \end{props}
+}
+
+\newlist{proofsteps}{enumerate}{1}
+\setlist[proofsteps]{label=\textbf{\arabic*.}, leftmargin=*, itemsep=6pt, topsep=2pt, before=\leavevmode}
+
+% --- Hyperlinks ---
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=cbBlue,
+  citecolor=cbBlue,
+  urlcolor=cbBlue
+}
+
+% --- Document parameters ---
+\linespread{1.0}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+
+\usepackage{titlesec}
+\titleformat{\part}[block]{\Large\bfseries\centering}{}{0pt}{}
+\titlespacing*{\part}{0pt}{0pt}{12pt}
+\counterwithin{section}{part}
+\renewcommand{\thepart}{\arabic{part}}
+\usepackage{tocloft}
+\setlength{\cftsecnumwidth}{2em}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyfoot[C]{\thepage}
+\let\oldpart\part
+\renewcommand{\part}[1]{\oldpart{#1}\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{}
+
+\usepackage{etoolbox}
+\pretocmd{\part}{\newpage}{}{}
+
+\begin{document}
+\thispagestyle{empty}
+
+\begin{center}
+  {\LARGE \textbf{Конспект}}
+\end{center}
+
+\vspace{12pt}
+\tableofcontents
+
+\part{Интегралы}
+
+\section{Определённый интеграл}
+
+\begin{definition}
+Пусть функция $f(x)$ определена на отрезке $[a,b]$.
+Рассмотрим разбиение
+\[
+T:\quad a=x_0<x_1<\dots<x_n=b.
+\]
+Отрезки $[x_i,x_{i+1}]$ называются \emph{элементарными}.
+Обозначим
+\[
+\Delta x_i=x_{i+1}-x_i,\qquad \lambda(T)=\max_{0\le i\le n-1}\Delta x_i.
+\]
+Для набора точек $\xi_i\in[x_i,x_{i+1}]$ сумма
+\[
+\sigma(T,\xi)=\sum_{i=0}^{n-1} f(\xi_i)\,\Delta x_i
+\]
+называется \emph{интегральной суммой Римана}.
+\end{definition}
+
+\begin{definition}
+Если существует конечный предел
+\[
+\lim_{\lambda(T)\to 0}\sigma(T,\xi)=I,
+\]
+то функция $f$ называется \emph{интегрируемой} на $[a,b]$, а число $I$ — её \emph{определённым интегралом}:
+\[
+I=\int_a^b f(x)\,dx.
+\]
+Множество всех интегрируемых на $[a,b]$ функций обозначают $R[a,b]$.
+\end{definition}
+
+\begin{theorem}[Необходимое условие интегрируемости]
+Если $f\in R[a,b]$, то $f$ ограничена на $[a,b]$.
+\end{theorem}
+
+\begin{proof}
+Предположим противное: пусть функция $f$ не ограничена на $[a,b]$.
+Тогда существует такой элементарный отрезок $[x_p,x_{p+1}]$, на котором $f$ неограничена.
+Но тогда при выборе точки $\xi_p\in[x_p,x_{p+1}]$ значения $f(\xi_p)$ могут становиться сколь угодно большими, и соответствующие интегральные суммы не могут иметь конечного предела при $\lambda(T)\to 0$.
+Противоречие.
+\end{proof}
+
+\section{Суммы Дарбу}
+
+\begin{definition}
+Пусть $f$ ограничена на $[a,b]$ и
+\[
+T:\quad a=x_0<x_1<\dots<x_n=b.
+\]
+Обозначим
+\[
+ m_i=\inf\limits_{x\in[x_i,x_{i+1}]} f(x),\qquad
+ M_i=\sup\limits_{x\in[x_i,x_{i+1}]} f(x).
+\]
+Тогда \emph{нижняя} и \emph{верхняя суммы Дарбу} равны
+\[
+ s(T)=\sum_{i=0}^{n-1} m_i\,\Delta x_i,\qquad
+ S(T)=\sum_{i=0}^{n-1} M_i\,\Delta x_i.
+\]
+\end{definition}
+
+\begin{prop}
+Для любой интегральной суммы $\sigma(T,\xi)$ выполнено
+\[
+ s(T)\le \sigma(T,\xi)\le S(T).
+\]
+\end{prop}
+
+\begin{prop}
+Если $T' = T\cup\{x\}$ — уточнение разбиения $T$, то
+\[
+S(T')\le S(T),\qquad s(T')\ge s(T).
+\]
+\end{prop}
+
+\begin{prop}
+Для любых разбиений $T$ и $T'$ выполняется
+\[
+ s(T)\le S(T').
+\]
+\end{prop}
+
+Из предыдущего свойства следует, что множества всех нижних и верхних сумм ограничены:
+\[
+\underline I=\sup\{s(T)\},\qquad \overline I=\inf\{S(T)\}.
+\]
+Эти числа называются соответственно \emph{нижним} и \emph{верхним} интегралами.
+
+\begin{theorem}[Теорема Дарбу]
+Если $f$ ограничена на $[a,b]$, то при $\lambda(T)\to 0$ выполняется
+\[
+\lim_{\lambda(T)\to 0}s(T)=\underline I,\qquad
+\lim_{\lambda(T)\to 0}S(T)=\overline I.
+\]
+\end{theorem}
+
+\begin{remark}
+Для краткости далее используется обозначение
+\[
+\omega_i=\sup\limits_{x\in[x_i,x_{i+1}]}f(x)-\inf\limits_{x\in[x_i,x_{i+1}]}f(x)
+\]
+— \emph{колебание} функции на элементарном отрезке.
+Тогда
+\[
+S(T)-s(T)=\sum_{i=0}^{n-1}\omega_i\,\Delta x_i.
+\]
+\end{remark}
+
+\section{Критерий интегрируемости функции}
+
+\begin{theorem}
+Для ограниченной на $[a,b]$ функции $f$ эквивалентны условия:
+\[
+ f\in R[a,b]\qquad\Longleftrightarrow\qquad \lim_{\lambda(T)\to 0}\bigl(S(T)-s(T)\bigr)=0.
+\]
+\end{theorem}
+
+\begin{proof}
+\textbf{Необходимость.}
+Если $f\in R[a,b]$, то существует
+\[
+\lim_{\lambda(T)\to 0}\sigma(T,\xi)=I.
+\]
+По определению предела для любого $\varepsilon>0$ при достаточно малом $\lambda(T)$ имеем
+\[
+|\sigma(T,\xi)-I|<\frac{\varepsilon}{2}.
+\]
+Так как $s(T)\le \sigma(T,\xi)\le S(T)$, то
+\[
+I-\frac{\varepsilon}{2}\le s(T)\le S(T)\le I+\frac{\varepsilon}{2}.
+\]
+Следовательно,
+\[
+0\le S(T)-s(T)\le \varepsilon,
+\]
+значит $\lim_{\lambda(T)\to 0}(S(T)-s(T))=0$.
+
+\medskip
+\textbf{Достаточность.}
+Пусть теперь
+\[
+\lim_{\lambda(T)\to 0}(S(T)-s(T))=0.
+\]
+Тогда по теореме Дарбу
+\[
+0\le \overline I-\underline I\le S(T)-s(T)\to 0,
+\]
+следовательно, $\underline I=\overline I=:I$.
+Из свойства Дарбу получаем
+\[
+s(T)\le I\le S(T),
+\]
+а значит для любой интегральной суммы
+\[
+0\le |\sigma(T,\xi)-I|\le S(T)-s(T)\to 0.
+\]
+Следовательно, $\lim_{\lambda(T)\to 0}\sigma(T,\xi)=I$, то есть $f\in R[a,b]$.
+\end{proof}
+
+\begin{example}
+Рассмотрим функцию Дирихле
+\[
+ f(x)=\begin{cases}
+ 1, & x\in\mathbb{Q},\\
+ 0, & x\in\mathbb{R}\setminus\mathbb{Q}.
+ \end{cases}
+\]
+На любом отрезке $[a,b]$ и на любом элементарном отрезке рациональные и иррациональные числа всюду плотны, поэтому
+\[
+ m_i=0,\qquad M_i=1.
+\]
+Тогда
+\[
+ s(T)=0,\qquad S(T)=\sum_{i=0}^{n-1}\Delta x_i=b-a,
+\]
+то есть $S(T)-s(T)=b-a\neq 0$.
+Значит, эта функция не интегрируема на $[a,b]$.
+\end{example}
+
+\section{Классы интегрируемых функций}
+
+\begin{theorem}
+Если $f\in C[a,b]$, то $f\in R[a,b]$.
+\end{theorem}
+
+\begin{proof}
+По теореме Кантора функция, непрерывная на отрезке $[a,b]$, равномерно непрерывна.
+Значит, для любого $\varepsilon>0$ существует такое $\delta>0$, что при $\lambda(T)<\delta$ для всех $i$ выполнено
+\[
+\omega_i<\frac{\varepsilon}{b-a}.
+\]
+Тогда
+\[
+0\le S(T)-s(T)=\sum_{i=0}^{n-1}\omega_i\,\Delta x_i
+<\sum_{i=0}^{n-1}\frac{\varepsilon}{b-a}\,\Delta x_i
+=\frac{\varepsilon}{b-a}\,(b-a)=\varepsilon.
+\]
+По критерию интегрируемости $f\in R[a,b]$.
+\end{proof}
+
+\begin{theorem}
+Если $f$ монотонна на $[a,b]$, то $f\in R[a,b]$.
+\end{theorem}
+
+\begin{proof}
+Пусть сначала $f$ неубывает на $[a,b]$.
+Тогда на каждом элементарном отрезке $[x_i,x_{i+1}]$ имеем
+\[
+ m_i=f(x_i),\qquad M_i=f(x_{i+1}),
+\]
+поэтому
+\[
+\omega_i=M_i-m_i\le f(b)-f(a).
+\]
+Следовательно,
+\[
+S(T)-s(T)=\sum_{i=0}^{n-1}\omega_i\,\Delta x_i
+\le \bigl(f(b)-f(a)\bigr)\sum_{i=0}^{n-1}\Delta x_i
+=\bigl(f(b)-f(a)\bigr)(b-a).
+\]
+Для произвольного $\varepsilon>0$ выбираем разбиение с достаточно малым шагом $\lambda(T)$ так, чтобы сумма колебаний была меньше $\varepsilon$; тогда по критерию интегрируемости $f\in R[a,b]$.
+Случай невозрастающей функции рассматривается аналогично.
+\end{proof}
+
+\end{document}
