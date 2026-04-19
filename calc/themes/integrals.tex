@@ -193,7 +193,7 @@ I=\int_a^b f(x)\,dx.
 
 \begin{theorem}[Необходимое условие интегрируемости]
 Если $f\in R[a,b]$, то $f$ ограничена на $[a,b]$.
-\end{theorem}
+
 
 \begin{proof}
 Предположим противное: пусть функция $f$ не ограничена на $[a,b]$.
@@ -201,6 +201,8 @@ I=\int_a^b f(x)\,dx.
 Но тогда при выборе точки $\xi_p\in[x_p,x_{p+1}]$ значения $f(\xi_p)$ могут становиться сколь угодно большими, и соответствующие интегральные суммы не могут иметь конечного предела при $\lambda(T)\to 0$.
 Противоречие.
 \end{proof}
+
+\end{theorem}
 
 \section{Суммы Дарбу}
 
@@ -224,12 +226,12 @@ T:\quad a=x_0<x_1<\dots<x_n=b.
 \begin{prop}
 Для любой интегральной суммы $\sigma(T,\xi)$ выполнено
 \[
- s(T)\le \sigma(T,\xi)\le S(T).
+ s(T)\le \sigma(T,\xi)\le S(T) \Rightarrow s(T) - \sup \land S(T) - \inf.
 \]
 \end{prop}
 
 \begin{prop}
-Если $T' = T\cup\{x\}$ — уточнение разбиения $T$, то
+Если $T' = T\cup\{x\}$ —  $T$ без точки $x$, то
 \[
 S(T')\le S(T),\qquad s(T')\ge s(T).
 \]
@@ -244,12 +246,15 @@ S(T')\le S(T),\qquad s(T')\ge s(T).
 
 Из предыдущего свойства следует, что множества всех нижних и верхних сумм ограничены:
 \[
+\boxed{s \le \underline I \le \overline I \le S} (*)
+\]
+\[
 \underline I=\sup\{s(T)\},\qquad \overline I=\inf\{S(T)\}.
 \]
 Эти числа называются соответственно \emph{нижним} и \emph{верхним} интегралами.
 
 \begin{theorem}[Теорема Дарбу]
-Если $f$ ограничена на $[a,b]$, то при $\lambda(T)\to 0$ выполняется
+Если $f$ ограничена на $[a,b]$ выполняется
 \[
 \lim_{\lambda(T)\to 0}s(T)=\underline I,\qquad
 \lim_{\lambda(T)\to 0}S(T)=\overline I.
@@ -275,7 +280,7 @@ S(T)-s(T)=\sum_{i=0}^{n-1}\omega_i\,\Delta x_i.
 \[
  f\in R[a,b]\qquad\Longleftrightarrow\qquad \lim_{\lambda(T)\to 0}\bigl(S(T)-s(T)\bigr)=0.
 \]
-\end{theorem}
+
 
 \begin{proof}
 \textbf{Необходимость.}
@@ -319,6 +324,8 @@ s(T)\le I\le S(T),
 Следовательно, $\lim_{\lambda(T)\to 0}\sigma(T,\xi)=I$, то есть $f\in R[a,b]$.
 \end{proof}
 
+\end{theorem}
+
 \begin{example}
 Рассмотрим функцию Дирихле
 \[
@@ -343,7 +350,7 @@ s(T)\le I\le S(T),
 
 \begin{theorem}
 Если $f\in C[a,b]$, то $f\in R[a,b]$.
-\end{theorem}
+
 
 \begin{proof}
 По теореме Кантора функция, непрерывная на отрезке $[a,b]$, равномерно непрерывна.
@@ -359,10 +366,10 @@ s(T)\le I\le S(T),
 \]
 По критерию интегрируемости $f\in R[a,b]$.
 \end{proof}
+\end{theorem}
 
 \begin{theorem}
 Если $f$ монотонна на $[a,b]$, то $f\in R[a,b]$.
-\end{theorem}
 
 \begin{proof}
 Пусть сначала $f$ неубывает на $[a,b]$.
@@ -383,5 +390,6 @@ S(T)-s(T)=\sum_{i=0}^{n-1}\omega_i\,\Delta x_i
 Для произвольного $\varepsilon>0$ выбираем разбиение с достаточно малым шагом $\lambda(T)$ так, чтобы сумма колебаний была меньше $\varepsilon$; тогда по критерию интегрируемости $f\in R[a,b]$.
 Случай невозрастающей функции рассматривается аналогично.
 \end{proof}
+\end{theorem}
 
 \end{document}
