@@ -1,0 +1,22 @@
+\part{Интегралы}
+
+\section{Интегралы с переменными верхними пределами}
+\begin{definition}
+    пусть $f \in R[a,b] \forall x \in [a,b] \Rightarrow f \in R{[a,x]}$
+    \[
+    \int_a^x f(t) \, dt = F(x)
+    \]
+\end{definition}
+
+\begin{paint}{example.}
+
+    \begin{tikzpicture}
+        \draw[->] (-0.5,0) -- (5,0) node[right] {$x$};
+        \draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+        \draw[thick, blue] (0,2) .. controls (1,1) and (2,2.5) .. (3,1.5) .. controls (4,1) and (5,2) .. (6,1);
+        \fill[red] (2.5, 0) circle (2pt) node[below] {$x$};
+        \fill[red] (2.5, 1.75) circle (2pt) node[right] {$f(x)$};
+        \draw[dashed] (2.5, 0) -- (2.5, 1.75);
+        \draw[dashed] (0, 1.75) -- (2.5, 1.75);
+    \end{tikzpicture}
+\end{paint}

@@ -1,0 +1,80 @@
+\section{Свойства определенного интеграла}
+
+\begin{prop} выражаемые равенством: \\
+    1. $ \int_a^b f(x) \, dx = -\int_b^a f(x) \, dx $ \\
+    2. $ \int_a^b 0 \, dx = 0 $ \\ 
+    3. $ \int_a^b 1 \, dx = b - a $ \\ 
+    4. $ \text{аддитивность}: \forall f, g \in R[a, b] \Rightarrow f + g \in R[a, b] $ \\
+    5. $ \text{однородность}: \forall f \in R[a, b], \forall \alpha \in \mathbb{R} \Rightarrow \alpha f \in R[a, b] $ \text{и} 
+    $ \int_a^b \alpha f(x) \, dx = \alpha \int_a^b f(x) \, dx $
+\end{prop}
+
+Доказательство данных свойств следует из определения определенного интеграла через сумму Римана.
+(внимательному читателю не составит труда самостоятельно проверить эти свойства)
+
+\begin{prop}
+4+5. $ \text{линейность}: \forall \alpha_1, \alpha_2, ..\alpha_k \in \mathbb{R}, \forall f_1, f_2, ..f_k \in R[a, b] \Rightarrow \sum_{i=1}^k \alpha_i f_i \in R[a, b] $ \\
+    и $ \int_a^b \sum_{i=1}^k \alpha_i f_i(x) \, dx = \sum_{i=1}^k \alpha_i \int_a^b f_i(x) \, dx $ \\
+6. $ f \in R[a,b] \forall [c,d] \subseteq [a,b] \Rightarrow f \in R[c,d] $ док-во стротся на том, что любая разбиение отрезка $[c,d]$ можно расширить до разбиения отрезка $[a,b]$, а любая интегральная сумма для разбиения отрезка $[c,d]$ будет интегральной суммой для расширенного разбиения отрезка $[a,b]$ \\
+7. аддитивность по промежуткам интегрирования: $ \forall c \in (a, b), \forall f \in R[a, b] \Rightarrow f \in R[c, b] $ и $ \int_a^b f(x) \, dx = \int_a^c f(x) \, dx + \int_c^b f(x) \, dx $
+\end{prop}
+
+\begin{paint}{геометрический смысл:}
+    \begin{tikzpicture}[scale=1.2]
+
+    % Оси
+    \draw[->] (-0.5,0) -- (5,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,3.5) node[above] {$y$};
+
+    % Точки a и b
+    \coordinate (A) at (1,0);
+    \coordinate (B) at (4,0);
+
+
+    % График функции (кривая)
+    \draw[thick, red]
+        (1,1) 
+        .. controls (1.5,2.2) and (2.5,2.3) .. (3,2)
+        .. controls (3.5,1.8) and (3.8,2.2) .. (4,2.4);
+
+    % Заливка области
+    \fill[blue!20]
+        (1,0) -- (1,1)
+        .. controls (1.5,2.2) and (2.5,2.3) .. (3,2)
+        .. controls (3.5,1.8) and (3.8,2.2) .. (4,2.4)
+        -- (4,0) -- cycle;
+        
+    \fill[pattern=north east lines]
+        (2.5,0) -- (2.5,2.16)
+        .. controls (3,2) and (3.5,1.8) .. (4,2.4)
+        -- (4,0) -- cycle;
+
+    % Надпись f(x)
+    \node at (2.5,3) {$f(x)$};
+
+    % Вертикальные линии
+    \draw[thick] (1,0) -- (1,1);
+    \draw[thick] (4,0) -- (4,2.4);
+    \draw[thick] (2.5,0) -- (2.5,2.16);
+
+    % Точка O
+    \node at (-0.2,-0.2) {$O$};
+    \node at (1,-0.2) {$a$};
+    \node at (4,-0.2) {$b$};
+    \node at (2.5,-0.2) {$c$};
+
+    \end{tikzpicture}
+\end{paint}
+
+\begin{prop}
+ 8. свойства инегралла на симметричных промежутках: $ \forall f \in R[-a, a] $ и $ f $ - четная функция, то $ \int_{-a}^a f(x) \, dx = 2\int_0^a f(x) \, dx $, а если $ f $ - нечетная функция, то $ \int_{-a}^a f(x) \, dx = 0 $
+\end{prop}
+
+\section{Свойства выражаемые неравенствами}
+
+\begin{prop}
+1. $ f \in R[a,b] (a < b), forall x \in [a,b] f(x) \ge 0 \Rightarrow \int_a^b f(x) \, dx \ge 0 $ 
+\begin{proof}
+    
+\end{proof}
+\end{prop}

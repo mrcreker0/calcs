@@ -16,6 +16,8 @@
 \usepackage{amsthm}
 
 % --- Color blocks ---
+\usepackage{tikz}
+\usetikzlibrary{patterns}
 \usepackage[most]{tcolorbox}
 \tcbuselibrary{theorems,breakable,skins}
 
@@ -58,6 +60,8 @@
 \newtheorem*{prop}{Свойство}
 \newtheorem*{props}{Свойства}
 \newtheorem*{examples}{Примеры}
+\newtheorem*{paint}{Рисунок}
+\newtheorem*{paintinner}{Рисунок}
 
 \theoremstyle{myremark}
 \newtheorem*{remark}{Замечание}
@@ -88,6 +92,9 @@
 \tcolorboxenvironment{prop}{colback=\blockback{cbPinkBack!50}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbPink}}
 \tcolorboxenvironment{props}{colback=\blockback{cbPinkBack!50}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbPink}}
 \tcolorboxenvironment{examples}{colback=\blockback{cbOrangeBack}, colframe=cbOrange!45!cbGray, borderline west={1.6pt}{0pt}{cbOrange}}
+\tcolorboxenvironment{paint}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}}
+\tcolorboxenvironment{paintinner}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}}
+
 
 \newenvironment{examplelist}[1][]{
   \begin{examples}#1
@@ -154,39 +161,18 @@
 
 
 \begin{center}
-  {\LARGE \textbf{Конспект по алгебре}}
+  {\LARGE \textbf{Конспект по математическому анализу}}
 \end{center}
 
 \vspace{12pt}
 
 \tableofcontents
 
-\part{Евклидовы пространства}
-\themefile{scalar_product.tex}
-\themefile{volume.tex}
-\themefile{euclidean_duality.tex}
-\themefile{orthogonal_complements.tex}
+% \part{Интеграллы}
+\themefile{integrals.tex}
+\themefile{definite_integral.tex}
+\themefile{integrals_with_limits.tex}
 
 
-\part{Пространства с билинейной формой}
-% \themefile{Nbilinear_form.tex}
-\themefile{bilinear_form.tex}
-% ...
-
-
-\part{Симметричные и кососимметричные формы}
-% \themefile{Nsymmetric_forms.tex}
-% \themefile{Nlagrange_darboux.tex}
-
-
-\part{Квадратичные формы}
-% ... 
-
-
-\part{Теория групп}
-% TODO: naming in subthemes
-\themefile{group.tex}
-\themefile{group2.tex}
-% \themefile{themeX.tex}
 
 \end{document}
