@@ -75,6 +75,81 @@
 \begin{prop}
 1. $ f \in R[a,b] (a < b), forall x \in [a,b] f(x) \ge 0 \Rightarrow \int_a^b f(x) \, dx \ge 0 $ 
 \begin{proof}
-    
+    $\sigma = \sum_{i=0}^{n-1} f(\xi_i) \Delta x_i \ge 0$ для всех интегральных сумм, а значит $ \int_a^b f(x) \, dx = \lim_{\lambda \to 0} \sigma \ge 0 $ \\
 \end{proof}
+2. Монотонность: $ f, g \in R[a,b] (a < b), \forall x \in [a,b] f(x) \ge g(x) \Rightarrow \int_a^b f(x) \, dx \ge \int_a^b g(x) \, dx $
+\begin{proof}
+    $ f(x) - g(x) \ge 0, \forall x \in [a,b] \Rightarrow \int_a^b (f(x) - g(x)) \, dx \ge 0 \Rightarrow \int_a^b f(x) \, dx - \int_a^b g(x) \, dx \ge 0 $ \\    
+\end{proof}
+3. ограниченность определенного интеграла: $ f \in R[a,b] (a < b), \forall x \in [a,b] m \le f(x) \le M \Rightarrow m(b-a) \le \int_a^b f(x) \, dx \le M(b-a) $
+\begin{proof}
+    $ m \le f(x) \le M, \Rightarrow \int_a^b m \, dx \le \int_a^b f(x) \, dx \le \int_a^b M \, dx \Rightarrow m(b-a) \le \int_a^b f(x) \, dx \le M(b-a) $ \\
+\end{proof}
+\end{prop}
+
+\begin{paint}{иллюстрация:}
+    \begin{tikzpicture}[scale=1.2]
+
+% Оси
+\draw[->] (-0.5,0) -- (5,0) node[right] {$x$};
+\draw[->] (0,-0.5) -- (0,3.5) node[above] {$y$};
+
+% График функции
+\draw[thick, red]
+    (1,1)
+    .. controls (1.8,2.5) and (2.5,2.6) .. (3,2.4)
+    .. controls (3.5,2.2) and (3.8,2.0) .. (4,1.8);
+
+% --- НИЖНЯЯ ЧАСТЬ (двойная штриховка до y=2) ---
+\begin{scope}
+\clip (0,0) rectangle (5,1.3);
+
+\fill[pattern=north east lines]
+    (1,0) -- (1,1)
+    .. controls (1.8,2.5) and (2.5,2.6) .. (3,2.4)
+    .. controls (3.5,2.2) and (3.8,2.0) .. (4,1.8)
+    -- (4,0) -- cycle;
+
+\fill[pattern=north west lines]
+    (1,0) -- (1,1)
+    .. controls (1.8,2.5) and (2.5,2.6) .. (3,2.4)
+    .. controls (3.5,2.2) and (3.8,2.0) .. (4,1.8)
+    -- (4,0) -- cycle;
+
+\end{scope}
+
+% --- ВЕРХНЯЯ ЧАСТЬ (одинарная штриховка выше y=2) ---
+\begin{scope}
+\clip (0,1.3) rectangle (5,5);
+
+\fill[pattern=north east lines]
+    (1,0) -- (1,1)
+    .. controls (1.8,2.5) and (2.5,2.6) .. (3,2.4)
+    .. controls (3.5,2.2) and (3.8,2.0) .. (4,1.8)
+    -- (4,0) -- cycle;
+
+\end{scope}
+
+% Линия уровня y=2
+\draw[dashed] (0,1.3) -- (4.2,1.3) node[right] {$m$};
+
+
+\draw[dashed] (0,2.5) -- (4.2,2.5) node[right] {$M$};
+% Вертикали
+\draw[thick] (1,0) -- (1,1);
+\draw[thick] (4,0) -- (4,1.8);
+
+% Подписи
+\node at (2.5,3) {$f(x)$};
+\node at (-0.2,-0.2) {$O$};
+\node at (1,-0.2) {$a$};
+\node at (4,-0.2) {$b$};
+
+\end{tikzpicture}
+\end{paint}
+
+\begin{prop}
+4. $ f \in [a,b] (a < b) \Rightarrow |f| \in R[a,b] \space \text{и} \space |\int_a^b f(x) \, dx| = \int_a^b |f(x)| \, dx $ \\
+следствие: $ f \in R[a,b] (a < b) \text{и} f(x) \ge 0 \forall x \in [a,b]: |f(x)| \le k \Rightarrow | \int_a^b f(x) \, dx | \le k(b-a) $
+5. $ f \in R[a,b] (a <b) \text{и} f(x) \ge 0 \forall x \in [a,b] \Rightarrow \forall [\alpha, \beta] \subseteq [a,b] \space \int_\alpha^\beta f(x) \, dx \le \int_a^b f(x) \, dx $ \\
 \end{prop}
