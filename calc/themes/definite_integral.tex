@@ -150,6 +150,27 @@
 
 \begin{prop}
 4. $ f \in [a,b] (a < b) \Rightarrow |f| \in R[a,b] \space \text{и} \space |\int_a^b f(x) \, dx| = \int_a^b |f(x)| \, dx $ \\
-следствие: $ f \in R[a,b] (a < b) \text{и} f(x) \ge 0 \forall x \in [a,b]: |f(x)| \le k \Rightarrow | \int_a^b f(x) \, dx | \le k(b-a) $
+следствие: $ f \in R[a,b] (a < b) \text{и} f(x) \ge 0 \forall x \in [a,b]: |f(x)| \le k \Rightarrow | \int_a^b f(x) \, dx | \le k(b-a) $ \\
 5. $ f \in R[a,b] (a <b) \text{и} f(x) \ge 0 \forall x \in [a,b] \Rightarrow \forall [\alpha, \beta] \subseteq [a,b] \space \int_\alpha^\beta f(x) \, dx \le \int_a^b f(x) \, dx $ \\
 \end{prop}
+
+\section{ Теоремы о среднемм значении}
+
+\begin{definition}
+    пусть $ f \in R[a,b] (a < b) \Rightarrow \forall x \in [a,b]: m \le f(x) \le M \Rightarrow m(b-a) \le \int_a^b f(x)dx \le M(b-a)$ \\
+    $m  \le \frac{1}{b-a} \int_a^b f(x)dx \le M $\\
+    $\mu = \frac{1}{b-a} \int_a^bf(x)dx $ - среднее значение функции на [a,b]
+\end{definition}
+
+\begin{theorem}
+    о среднем значении \\
+    $f \in \mathbb{C}[a,b] \Rightarrow \exists \xi \in [a,b]: \int_a^b f(x)dx = f(\xi)(b-a)$
+    \begin{proof}
+        $ f[a,b] \Rightarrow f \in R[a,b]$ \\
+         $\Downarrow$ \\
+         $\exists \sup f(x) = M = f(x_i) \text{и} \inf f(x) = mf(x_i$) \\
+         пусть $ \mu = \frac{1}{b-a} \int_a^b f(x)dx \Rightarrow m \le \mu \le M \overset{Т.Б.К.}\Rightarrow \mu$ - значение $f(x)$ т.е. $\exists \xi \in [a,b], \mu \in f(\xi) $
+    \end{proof}
+\end{theorem}
+
+
