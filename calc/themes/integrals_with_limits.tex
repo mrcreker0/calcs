@@ -1,4 +1,4 @@
-\part{Интегралы}
+\part{Интегралы с переменными верхними пределами}
 
 \section{Интегралы с переменными верхними пределами}
 \begin{definition}
@@ -8,15 +8,61 @@
     \]
 \end{definition}
 
-\begin{paint}{example.}
+\begin{paint}
+    \begin{tikzpicture}[scale=1.2]
 
-    \begin{tikzpicture}
-        \draw[->] (-0.5,0) -- (5,0) node[right] {$x$};
-        \draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
-        \draw[thick, blue] (0,2) .. controls (1,1) and (2,2.5) .. (3,1.5) .. controls (4,1) and (5,2) .. (6,1);
-        \fill[red] (2.5, 0) circle (2pt) node[below] {$x$};
-        \fill[red] (2.5, 1.75) circle (2pt) node[right] {$f(x)$};
-        \draw[dashed] (2.5, 0) -- (2.5, 1.75);
-        \draw[dashed] (0, 1.75) -- (2.5, 1.75);
+    % Оси
+    \draw[->] (-0.5,0) -- (5,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,3.5) node[above] {$y$};
+
+    % Точки a и b
+    \coordinate (A) at (1,0);
+    \coordinate (B) at (4,0);
+
+
+    % График функции (кривая)
+    \draw[thick, red]
+        (1,1) 
+        .. controls (1.5,2.2) and (2.5,2.3) .. (3,2)
+        .. controls (3.5,1.8) and (3.8,2.2) .. (4,2.4);
+
+    % Заливка области
+    \fill[blue!20]
+        (1,0) -- (1,1)
+        .. controls (1.5,2.2) and (2.5,2.3) .. (3,2)
+        .. controls (3.5,1.8) and (3.8,2.2) .. (4,2.4)
+        -- (4,0) -- cycle;
+        
+    \fill[pattern=north east lines]
+        (2.5,0) -- (2.5,2.16)
+        .. controls (3,2) and (3.5,1.8) .. (4,2.4)
+        -- (4,0) -- cycle;
+
+    % Надпись f(x)
+    \node at (2.5,3) {$f(x)$};
+
+    % Вертикальные линии
+    \draw[thick] (1,0) -- (1,1);
+    \draw[thick] (4,0) -- (4,2.4);
+    \draw[thick] (2.5,0) -- (2.5,2.16);
+
+    % Точка O
+    \node at (-0.2,-0.2) {$O$};
+    \node at (1,-0.2) {$a$};
+    \node at (4,-0.2) {$b$};
+    \node at (2.5,-0.2) {$c$};
+
     \end{tikzpicture}
 \end{paint}
+
+\begin{theorem}
+    $ f \in R[a,b] \Rightarrow \in \mathbb{C}[a,b] $
+    \begin{proof}
+        $ \forall  x \in [a,b]$ x - фиксированное число
+        $x + n \in[a,b] $, где n - приращение
+        $ \delta F = F(x + n) - F(x) = \int_a^{x+n} f(t) \, dt - \int_a^x f(t) \, dt = \int_x^{x+n} f(t) \, dt $ \\
+        $ f \in R[a.b] f$ - ограниченная функция, значит $ \exists M \geqslant 0: |f(x)| \leqslant M, \forall x \in [a,b] $ \\
+        $ 0 \leqslant |\delta F(x)| = |\int_x^{x+n} f(t) \, dt| \leqslant k * |n| \space (|n| \to 0) \Rightarrow \lim\limits_{n \to 0} \delta F(x) = 0$
+
+    \end{proof}
+\end{theorem}
