@@ -56,13 +56,54 @@
 \end{paint}
 
 \begin{theorem}
-    $ f \in R[a,b] \Rightarrow \in \mathbb{C}[a,b] $
+
+    $$
+        f \in R[a,b] \Rightarrow \in \mathbb{C}[a,b] 
+    $$
+
     \begin{proof}
         $ \forall  x \in [a,b]$ x - фиксированное число
         $x + n \in[a,b] $, где n - приращение
-        $ \delta F = F(x + n) - F(x) = \int_a^{x+n} f(t) \, dt - \int_a^x f(t) \, dt = \int_x^{x+n} f(t) \, dt $ \\
+        $ \Delta F = F(x + n) - F(x) = \int_a^{x+n} f(t) \, dt - \int_a^x f(t) \, dt = \int_x^{x+n} f(t) \, dt $ \\
         $ f \in R[a.b] f$ - ограниченная функция, значит $ \exists M \geqslant 0: |f(x)| \leqslant M, \forall x \in [a,b] $ \\
-        $ 0 \leqslant |\delta F(x)| = |\int_x^{x+n} f(t) \, dt| \leqslant k * |n| \space (|n| \to 0) \Rightarrow \lim\limits_{n \to 0} \delta F(x) = 0$
-
+        $ 0 \leqslant |\Delta F(x)| = |\int_x^{x+n} f(t) \, dt| \leqslant k * |n| \space (|n| \to 0) \Rightarrow \lim\limits_{n \to 0} \Delta F(x) = 0 \overset{\text{опр}}{\Leftrightarrow}$ % оверсет опр
+        $ F \in \mathbb{C}[a,b] $
     \end{proof}
 \end{theorem}
+
+\begin{theorem}
+    $$
+        f \in R[a,b] \space \,  \text{и}  \, \space f \in \mathbb{C}(x_0), \space \, \text{где} \, \space x_0 \in [a,b] \Rightarrow F \in D(x_0) \space \, \text{причем} \space \, F'(x_0) = f(x_0)
+    $$  
+    \begin{proof} 
+        $ F'(x_0) = \lim\limits_{h \to 0} \frac{\Delta F(x_0)}{h} = f(x_0) $ \\
+        $ \Delta F(X_0) = \int_{x_0}^{x_0+h} f(t) \, dt $ \\
+        $ |\frac{\Delta F(x_0)}{h} -f(x_0) | = |- \frac{1}{h} \int_{x_0}^{x_0+h}1 \, dt + \frac{1}{h} \int_{x_0}^{x_0 + h} f(t) dt | = $ \\ 
+        $ = | \frac{1}{h} \int_{x_0}^{x_0+h}(f(t) - f(x_0)) \, dt | \leqslant \frac{1}{|h|} | \int_{x_0}^{x_0+h} | f(t) - f(x_0) | dt |$ \\
+        $ f \in [a,b] \Leftrightarrow \forall \epsilon > 0 \exists \delta > 0: \forall t: |t < x_0 | < \delta \Rightarrow |f(t) - f(x_0)| < \epsilon $ возьмем h: \\
+        $ |f(t) - f(x_0)| \leqslant \frac{1}{|h|} | \int_{x_0}^{x_0+h} \epsilon dt | = \frac{1}{|h|} * \epsilon * |h| = |\epsilon| $ \\
+        $\forall \epsilon \exists \delta: \forall h: |h| < \delta \Rightarrow | \frac{\Delta f(x_0)}{h} - f(x_0) | < \epsilon \overset{\text{опр}}{\Leftrightarrow} \lim\limits_{h \to 0} \frac{\Delta F(x_0)}{h} = f(x_0) - \text{конечный} \Rightarrow F(x_0) \in D(x_0) $
+        $ f \in \mathbb{C}[a,b] \Rightarrow \forall x \in [a,b] F(x) \in D(x_) \Rightarrow F(x) \in D[a,b] \, \text{и} \, F'(x) = f(x) $ \\
+    \end{proof}
+\end{theorem}
+
+$ \int_{a}^{x} f(t) \, dt = f(x) $ \\
+$ F'(x) = f(x) \overset{\text{опр}}{\Leftrightarrow} F(x) \text{првообразная для} f(x) $ \\
+% \begin{newtheorem}
+    $ f \in \mathbb{C}[a,b] \Rightarrow F(x)$ - первообразная для $f(x)$ на $[a,b] $
+% \end{newtheorem}
+
+\section{Формула Ньютона Лейбница(Ф.Н.Л)}
+\text{будет дорабатываться}
+$ f \in [a,b] \Rightarrow | \int_{a}^{b} f(t) \, dt = fi(b) - fi(a) \, \mathclap{f}$ 
+
+\section{Замена переменной в определенном интеграле}
+% \text{будет доррабатываться}
+\begin{lemma}
+    $$
+        1)f \in \mathbb{C}[a,b] \\ 
+        2) x fi(t) \in \mathbb{C}^1[\alpha, \beta]
+    $$
+\end{lemma}
+
+
