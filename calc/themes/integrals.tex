@@ -15,7 +15,7 @@ T:\quad a=x_0<x_1<\dots<x_n=b.
 \]
 Для набора точек $\xi_i\in[x_i,x_{i+1}]$ сумма
 \[
-\sigma(T,\xi)=\sum_{i=0}^{n-1} f(\xi_i)\,\Delta x_i
+\sigma(T,\xi)=\sum\limits_{i=0}^{n-1} f(\xi_i)\,\Delta x_i
 \]
 называется \emph{интегральной суммой Римана}.
 \end{definition}
@@ -27,7 +27,7 @@ T:\quad a=x_0<x_1<\dots<x_n=b.
 \]
 то функция $f$ называется \emph{интегрируемой} на $[a,b]$, а число $I$ — её \emph{определённым интегралом}:
 \[
-I=\int_a^b f(x)\,dx.
+I=\int\limits_a^b f(x)\,dx.
 \]
 Множество всех интегрируемых на $[a,b]$ функций обозначают $R[a,b]$.
 \end{definition}
@@ -59,8 +59,8 @@ T:\quad a=x_0<x_1<\dots<x_n=b.
 \]
 Тогда \emph{нижняя} и \emph{верхняя суммы Дарбу} равны
 \[
- s(T)=\sum_{i=0}^{n-1} m_i\,\Delta x_i,\qquad
- S(T)=\sum_{i=0}^{n-1} M_i\,\Delta x_i.
+ s(T)=\sum\limits_{i=0}^{n-1} m_i\,\Delta x_i,\qquad
+ S(T)=\sum\limits_{i=0}^{n-1} M_i\,\Delta x_i.
 \]
 \end{definition}
 
@@ -110,7 +110,7 @@ S(T')\le S(T),\qquad s(T')\ge s(T).
 — \emph{колебание} функции на элементарном отрезке.
 Тогда
 \[
-S(T)-s(T)=\sum_{i=0}^{n-1}\omega_i\,\Delta x_i.
+S(T)-s(T)=\sum\limits_{i=0}^{n-1}\omega_i\,\Delta x_i.
 \]
 \end{remark}
 
@@ -162,7 +162,7 @@ s(T)\le I\le S(T),
 \[
 0\le |\sigma(T,\xi)-I|\le S(T)-s(T)\to 0.
 \]
-Следовательно, $\lim_{\lambda(T)\to 0}\sigma(T,\xi)=I$, то есть $f\in R[a,b]$.
+Следовательно, $\lim\limits_{\lambda(T)\to 0}\sigma(T,\xi)=I$, то есть $f\in R[a,b]$.
 \end{proof}
 
 \end{theorem}
@@ -181,7 +181,7 @@ s(T)\le I\le S(T),
 \]
 Тогда
 \[
- s(T)=0,\qquad S(T)=\sum_{i=0}^{n-1}\Delta x_i=b-a,
+ s(T)=0,\qquad S(T)=\sum\limits_{i=0}^{n-1}\Delta x_i=b-a,
 \]
 то есть $S(T)-s(T)=b-a\neq 0$.
 Значит, эта функция не интегрируема на $[a,b]$.
@@ -201,8 +201,8 @@ s(T)\le I\le S(T),
 \]
 Тогда
 \[
-0\le S(T)-s(T)=\sum_{i=0}^{n-1}\omega_i\,\Delta x_i
-<\sum_{i=0}^{n-1}\frac{\varepsilon}{b-a}\,\Delta x_i
+0\le S(T)-s(T)=\sum\limits_{i=0}^{n-1}\omega_i\,\Delta x_i
+<\sum\limits_{i=0}^{n-1}\frac{\varepsilon}{b-a}\,\Delta x_i
 =\frac{\varepsilon}{b-a}\,(b-a)=\varepsilon.
 \]
 По критерию интегрируемости $f\in R[a,b]$.
@@ -224,8 +224,8 @@ s(T)\le I\le S(T),
 \]
 Следовательно,
 \[
-S(T)-s(T)=\sum_{i=0}^{n-1}\omega_i\,\Delta x_i
-\le \bigl(f(b)-f(a)\bigr)\sum_{i=0}^{n-1}\Delta x_i
+S(T)-s(T)=\sum\limits_{i=0}^{n-1}\omega_i\,\Delta x_i
+\le \bigl(f(b)-f(a)\bigr)\sum\limits_{i=0}^{n-1}\Delta x_i
 =\bigl(f(b)-f(a)\bigr)(b-a).
 \]
 Для произвольного $\varepsilon>0$ выбираем разбиение с достаточно малым шагом $\lambda(T)$ так, чтобы сумма колебаний была меньше $\varepsilon$; тогда по критерию интегрируемости $f\in R[a,b]$.
