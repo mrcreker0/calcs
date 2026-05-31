@@ -29,6 +29,7 @@
 % --- Colors for blocks ---
 \usepackage{xcolor}
 \definecolor{cbBlueBack}{RGB}{246,249,252}
+\definecolor{cbRedBack}{RGB}{252,230,230}
 \definecolor{cbGreenBack}{RGB}{246,251,248}
 \definecolor{cbOrangeBack}{RGB}{252,249,242}
 \definecolor{cbPurpleBack}{RGB}{249,247,252}
@@ -42,6 +43,7 @@
 \definecolor{cbGray}{RGB}{80,80,80}
 \definecolor{cbRose}{RGB}{138,65,82}
 \definecolor{cbPink}{RGB}{160, 100, 170}
+\definecolor{cbRed}{RGB}{204,0,0}
 
 % --- Theorems and definitions ---
 \newtheoremstyle{mystatement}{8pt}{8pt}{\itshape}{}{\bfseries}{.}{\newline}{}
@@ -65,6 +67,7 @@
 
 \theoremstyle{myremark}
 \newtheorem*{remark}{Замечание}
+\newtheorem{task}{Задача}
 
 % --- Colored tcolorbox blocks ---
 \tcbset{
@@ -94,6 +97,7 @@
 \tcolorboxenvironment{examples}{colback=\blockback{cbOrangeBack}, colframe=cbOrange!45!cbGray, borderline west={1.6pt}{0pt}{cbOrange}}
 \tcolorboxenvironment{paint}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}}
 \tcolorboxenvironment{paintinner}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}}
+\tcolorboxenvironment{task}{colback=\blockback{cbRedBack}, colframe=cbRed!45!cbGray, borderline west={1.6pt}{0pt}{cbRed}}
 
 
 \newenvironment{examplelist}[1][]{

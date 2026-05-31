@@ -2,25 +2,25 @@
 \section{Свойства определенного интеграла}
 
 \begin{prop} выражаемые равенством: \\
-    1. $ \int\limits_a^b f(x) \, dx = -\int\limits_b^a f(x) \, dx $ \\
-    2. $ \int\limits_a^b 0 \, dx = 0 $ \\ 
-    3. $ \int\limits_a^b 1 \, dx = b - a $ \\ 
-    4. $ \text{аддитивность}: \forall f, g \in R[a, b] \Rightarrow f + g \in R[a, b] $ \\
+    1. $ \int\limits_a^b f(x) \, dx = -\int\limits_b^a f(x) \, dx $. \\
+    2. $ \int\limits_a^b 0 \, dx = 0 $. \\ 
+    3. $ \int\limits_a^b 1 \, dx = b - a $. \\ 
+    4. $ \text{аддитивность}: \forall f, g \in R[a, b] \Rightarrow f + g \in R[a, b] $. \\
     5. $ \text{однородность}: \forall f \in R[a, b], \forall \alpha \in \mathbb{R} \Rightarrow \alpha f \in R[a, b] $ \text{и} 
-    $ \int\limits_a^b \alpha f(x) \, dx = \alpha \int\limits_a^b f(x) \, dx $
+    $ \int\limits_a^b \alpha f(x) \, dx = \alpha \int\limits_a^b f(x) \, dx $.
 \end{prop}
 
 Доказательство данных свойств следует из определения определенного интеграла через сумму Римана.
-(внимательному читателю не составит труда самостоятельно проверить эти свойства)
+(внимательному читателю не составит труда самостоятельно проверить эти свойства).
 
 \begin{prop}
-4+5. $ \text{линейность}: \forall \alpha_1, \alpha_2, ..\alpha_k \in \mathbb{R}, \forall f_1, f_2, ..f_k \in R[a, b] \Rightarrow \sum\limits_{i=1}^k \alpha_i f_i \in R[a, b] $ \\
-    и $ \int\limits_a^b \sum\limits_{i=1}^k \alpha_i f_i(x) \, dx = \sum\limits_{i=1}^k \alpha_i \int\limits_a^b f_i(x) \, dx $ \\
-6. $ f \in R[a,b] \forall [c,d] \subseteq [a,b] \Rightarrow f \in R[c,d] $ док-во стротся на том, что любая разбиение отрезка $[c,d]$ можно расширить до разбиения отрезка $[a,b]$, а любая интегральная сумма для разбиения отрезка $[c,d]$ будет интегральной суммой для расширенного разбиения отрезка $[a,b]$ \\
-7. аддитивность по промежуткам интегрирования: $ \forall c \in (a, b), \forall f \in R[a, b] \Rightarrow f \in R[c, b] $ и $ \int\limits_a^b f(x) \, dx = \int\limits_a^c f(x) \, dx + \int\limits_c^b f(x) \, dx $
+4+5. $ \text{линейность}: \forall \alpha_1, \alpha_2, ..\alpha_k \in \mathbb{R}, \forall f_1, f_2, ..f_k \in R[a, b] \Rightarrow \sum\limits_{i=1}^k \alpha_i f_i \in R[a, b] $. \\
+    и $ \int\limits_a^b \sum\limits_{i=1}^k \alpha_i f_i(x) \, dx = \sum\limits_{i=1}^k \alpha_i \int\limits_a^b f_i(x) \, dx $. \\
+6. $ f \in R[a,b] \forall [c,d] \subseteq [a,b] \Rightarrow f \in R[c,d] $. Доказательство строится на том, что любое разбиение отрезка $[c,d]$ можно расширить до разбиения отрезка $[a,b]$, а любая интегральная сумма для разбиения отрезка $[c,d]$ будет интегральной суммой для расширенного разбиения отрезка $[a,b]$. \\
+7. Аддитивность по промежуткам интегрирования: $ \forall c \in (a, b), \forall f \in R[a, b] \Rightarrow f \in R[c, b] $ и $ \int\limits_a^b f(x) \, dx = \int\limits_a^c f(x) \, dx + \int\limits_c^b f(x) \, dx $.
 \end{prop}
 
-\begin{paint}{геометрический смысл:}
+\begin{paint}{Геометрический смысл}
     \begin{tikzpicture}[scale=1.2]
 
     % Оси
@@ -68,27 +68,27 @@
 \end{paint}
 
 \begin{prop}
- 8. свойства инегралла на симметричных промежутках: $ \forall f \in R[-a, a] $ и $ f $ - четная функция, то $ \int\limits_{-a}^a f(x) \, dx = 2\int\limits_0^a f(x) \, dx $, а если $ f $ - нечетная функция, то $ \int\limits_{-a}^a f(x) \, dx = 0 $
+ 8. Свойства интеграла на симметричных промежутках: $ \forall f \in R[-a, a] $ и $ f $ - чётная функция, то $ \int\limits_{-a}^a f(x) \, dx = 2\int\limits_0^a f(x) \, dx $, а если $ f $ - нечётная функция, то $ \int\limits_{-a}^a f(x) \, dx = 0 $.
 \end{prop}
 
 \section{Свойства выражаемые неравенствами}
 
 \begin{prop}
-1. $ f \in R[a,b] (a < b), forall x \in [a,b] f(x) \ge 0 \Rightarrow \int\limits_a^b f(x) \, dx \ge 0 $ 
+1. $ f \in R[a,b] (a < b), \forall x \in [a,b] f(x) \geqslant 0 \Rightarrow \int\limits_a^b f(x) \, dx \geqslant 0 $.
 \begin{proof}
-    $\sigma = \sum\limits_{i=0}^{n-1} f(\xi_i) \Delta x_i \ge 0$ для всех интегральных сумм, а значит $ \int\limits_a^b f(x) \, dx = \lim\limits_{\lambda \to 0} \sigma \ge 0 $ \\
+    $\sigma = \sum\limits_{i=0}^{n-1} f(\xi_i) \Delta x_i \geqslant 0$ для всех интегральных сумм, а значит $ \int\limits_a^b f(x) \, dx = \lim\limits_{\lambda \to 0} \sigma \geqslant 0 $.
 \end{proof}
-2. Монотонность: $ f, g \in R[a,b] (a < b), \forall x \in [a,b] f(x) \ge g(x) \Rightarrow \int\limits_a^b f(x) \, dx \ge \int\limits_a^b g(x) \, dx $
+2. Монотонность: $ f, g \in R[a,b] (a < b), \forall x \in [a,b] f(x) \geqslant g(x) \Rightarrow \int\limits_a^b f(x) \, dx \geqslant \int\limits_a^b g(x) \, dx $.
 \begin{proof}
-    $ f(x) - g(x) \ge 0, \forall x \in [a,b] \Rightarrow \int\limits_a^b (f(x) - g(x)) \, dx \ge 0 \Rightarrow \int\limits_a^b f(x) \, dx - \int\limits_a^b g(x) \, dx \ge 0 $ \\    
+    $ f(x) - g(x) \geqslant 0, \forall x \in [a,b] \Rightarrow \int\limits_a^b (f(x) - g(x)) \, dx \geqslant 0 \Rightarrow \int\limits_a^b f(x) \, dx - \int\limits_a^b g(x) \, dx \geqslant 0 $.
 \end{proof}
-3. ограниченность определенного интеграла: $ f \in R[a,b] (a < b), \forall x \in [a,b] m \le f(x) \le M \Rightarrow m(b-a) \le \int\limits_a^b f(x) \, dx \le M(b-a) $
+3. Ограниченность определённого интеграла: $ f \in R[a,b] (a < b), \forall x \in [a,b] m \leqslant f(x) \leqslant M \Rightarrow m(b-a) \leqslant \int\limits_a^b f(x) \, dx \leqslant M(b-a) $.
 \begin{proof}
-    $ m \le f(x) \le M, \Rightarrow \int\limits_a^b m \, dx \le \int\limits_a^b f(x) \, dx \le \int\limits_a^b M \, dx \Rightarrow m(b-a) \le \int\limits_a^b f(x) \, dx \le M(b-a) $ \\
+    $ m \leqslant f(x) \leqslant M, \Rightarrow \int\limits_a^b m \, dx \leqslant \int\limits_a^b f(x) \, dx \leqslant \int\limits_a^b M \, dx \Rightarrow m(b-a) \leqslant \int\limits_a^b f(x) \, dx \leqslant M(b-a) $.
 \end{proof}
 \end{prop}
 
-\begin{paint}{иллюстрация:}
+\begin{paint}{Иллюстрация}
     \begin{tikzpicture}[scale=1.2]
 
 % Оси
@@ -150,28 +150,39 @@
 \end{paint}
 
 \begin{prop}
-4. $ f \in [a,b] (a < b) \Rightarrow |f| \in R[a,b] \space \text{и} \space |\int\limits_a^b f(x) \, dx| = \int\limits_a^b |f(x)| \, dx $ \\
-следствие: $ f \in R[a,b] (a < b) \text{и} f(x) \ge 0 \forall x \in [a,b]: |f(x)| \le k \Rightarrow | \int\limits_a^b f(x) \, dx | \le k(b-a) $ \\
-5. $ f \in R[a,b] (a <b) \text{и} f(x) \ge 0 \forall x \in [a,b] \Rightarrow \forall [\alpha, \beta] \subseteq [a,b] \space \int\limits_\alpha^\beta f(x) \, dx \le \int\limits_a^b f(x) \, dx $ \\
+4. $ f \in [a,b] (a < b) \Rightarrow |f| \in R[a,b] \space \text{и} \space |\int\limits_a^b f(x) \, dx| \leqslant \int\limits_a^b |f(x)| \, dx $. \\
+Следствие: $ f \in R[a,b] (a < b) \text{и} f(x) \geqslant 0 \forall x \in [a,b]: |f(x)| \leqslant k \Rightarrow | \int\limits_a^b f(x) \, dx | \leqslant k(b-a) $. \\
+5. $ f \in R[a,b] (a <b) \text{и} f(x) \geqslant 0 \forall x \in [a,b] \Rightarrow \forall [\alpha, \beta] \subseteq [a,b] \space \int\limits_\alpha^\beta f(x) \, dx \leqslant \int\limits_a^b f(x) \, dx $. \\
 \end{prop}
 
-\section{ Теоремы о среднемм значении}
+\section{ Теоремы о среднем значении}
 
 \begin{definition}
-    пусть $ f \in R[a,b] (a < b) \Rightarrow \forall x \in [a,b]: m \le f(x) \le M \Rightarrow m(b-a) \le \int\limits_a^b f(x)dx \le M(b-a)$ \\
-    $m  \le \frac{1}{b-a} \int\limits_a^b f(x)dx \le M $\\
-    $\mu = \frac{1}{b-a} \int\limits_a^bf(x)dx $ - среднее значение функции на [a,b]
+    Пусть $ f \in R[a,b] (a < b) \Rightarrow \forall x \in [a,b]: m \leqslant f(x) \leqslant M \Rightarrow m(b-a) \leqslant \int\limits_a^b f(x)dx \leqslant M(b-a)$.
+    $$m  \leqslant \frac{1}{b-a} \int\limits_a^b f(x)dx \leqslant M.$$
+    $$\mu = \frac{1}{b-a} \int\limits_a^bf(x)dx$$ — среднее значение функции на $[a,b]$.
 \end{definition}
 
 \begin{theorem}
-    о среднем значении \\
-    $f \in \mathbb{C}[a,b] \Rightarrow \exists \xi \in [a,b]: \int\limits_a^b f(x)dx = f(\xi)(b-a)$
+    о среднем значении.
+    $$f \in \mathbb{C}[a,b] \Rightarrow \exists \xi \in [a,b]: \int\limits_a^b f(x)dx = f(\xi)(b-a).$$
     \begin{proof}
-        $ f[a,b] \Rightarrow f \in R[a,b]$ \\
-         $\Downarrow$ \\
-         $\exists \sup f(x) = M = f(x_i) \, \text{и} \, \inf f(x) = m = f(x_i$) \\
-         пусть $ \mu = \frac{1}{b-a} \int\limits_a^b f(x)dx \Rightarrow m \le \mu \le M \overset{Т.Б.К.}\Rightarrow \mu$ - значение $f(x)$ т.е. $\exists \xi \in [a,b], \mu \in f(\xi) $
+        $ f \in C[a,b] \Rightarrow f \in R[a,b]$.
+         $$\Downarrow$$
+         $\exists \sup f(x) = M = f(x_i)$ и $\inf f(x) = m = f(x_j)$.
+         Пусть $ \mu = \frac{1}{b-a} \int\limits_a^b f(x)dx \Rightarrow m \leqslant \mu \leqslant M$. По теореме о промежуточном значении непрерывной функции $\mu$ — значение $f(x)$, т.е. $\exists \, \xi \in [a,b]: f(\xi) = \mu$.
     \end{proof}
 \end{theorem}
 
 
+\begin{task}
+Используя свойства определённого интеграла, вычислите 
+$$ \int\limits_{-2}^{2} (x^3+2x^2+1)\,dx.$$
+\end{task}
+
+\begin{task}
+Пусть
+$$ 2\leqslant f(x)\leqslant 5,\quad x\in[1,4]. $$
+Оцените значение интеграла 
+$$ \int\limits_1^4 f(x)\,dx. $$
+\end{task}
