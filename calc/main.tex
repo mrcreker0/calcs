@@ -49,6 +49,7 @@
 \newtheoremstyle{mystatement}{8pt}{8pt}{\itshape}{}{\bfseries}{.}{\newline}{}
 \newtheoremstyle{mydefinition}{8pt}{8pt}{\normalfont}{}{\bfseries}{.}{0.5em}{}
 \newtheoremstyle{myremark}{6pt}{6pt}{\normalfont}{}{\bfseries}{.}{\newline}{}
+\newtheoremstyle{mypaint}{8pt}{8pt}{\normalfont}{}{\bfseries}{.}{0.5em}{}
 
 \theoremstyle{mystatement}
 \newtheorem*{theorem}{Теорема}
@@ -62,6 +63,8 @@
 \newtheorem*{prop}{Свойство}
 \newtheorem*{props}{Свойства}
 \newtheorem*{examples}{Примеры}
+
+\theoremstyle{mypaint}
 \newtheorem*{paint}{Рисунок}
 \newtheorem*{paintinner}{Рисунок}
 
@@ -95,8 +98,8 @@
 \tcolorboxenvironment{prop}{colback=\blockback{cbPinkBack!50}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbPink}}
 \tcolorboxenvironment{props}{colback=\blockback{cbPinkBack!50}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbPink}}
 \tcolorboxenvironment{examples}{colback=\blockback{cbOrangeBack}, colframe=cbOrange!45!cbGray, borderline west={1.6pt}{0pt}{cbOrange}}
-\tcolorboxenvironment{paint}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}, title and content}
-\tcolorboxenvironment{paintinner}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}, title and content}
+\tcolorboxenvironment{paint}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}}
+\tcolorboxenvironment{paintinner}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}}
 \tcolorboxenvironment{task}{colback=\blockback{cbRedBack}, colframe=cbRed!45!cbGray, borderline west={1.6pt}{0pt}{cbRed}}
 
 
