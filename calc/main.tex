@@ -64,13 +64,18 @@
 \newtheorem*{props}{Свойства}
 \newtheorem*{examples}{Примеры}
 
-\theoremstyle{mypaint}
-\newtheorem*{paint}{Рисунок}
-\newtheorem*{paintinner}{Рисунок}
-
 \theoremstyle{myremark}
 \newtheorem*{remark}{Замечание}
 \newtheorem{task}{Задача}
+
+% --- Custom paint environment using tcolorbox ---
+\newtcolorbox{paint}[1][]{
+  colback=\blockback{cbGrayBack},
+  colframe=cbGray!40,
+  borderline west={1.6pt}{0pt}{cbGray},
+  title=#1,
+  attach title to upper
+}
 
 % --- Colored tcolorbox blocks ---
 \tcbset{
@@ -98,8 +103,6 @@
 \tcolorboxenvironment{prop}{colback=\blockback{cbPinkBack!50}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbPink}}
 \tcolorboxenvironment{props}{colback=\blockback{cbPinkBack!50}, colframe=cbGray!55, borderline west={1.6pt}{0pt}{cbPink}}
 \tcolorboxenvironment{examples}{colback=\blockback{cbOrangeBack}, colframe=cbOrange!45!cbGray, borderline west={1.6pt}{0pt}{cbOrange}}
-\tcolorboxenvironment{paint}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}}
-\tcolorboxenvironment{paintinner}{colback=\blockback{cbGrayBack}, colframe=cbGray!40, borderline west={1.6pt}{0pt}{cbGray}}
 \tcolorboxenvironment{task}{colback=\blockback{cbRedBack}, colframe=cbRed!45!cbGray, borderline west={1.6pt}{0pt}{cbRed}}
 
 
