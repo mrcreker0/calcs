@@ -11,7 +11,7 @@ T:\quad a=x_0<x_1<\dots<x_n=b.
 Отрезки $[x_i,x_{i+1}]$ называются \emph{элементарными}.
 Обозначим
 \[
-\Delta x_i=x_{i+1}-x_i,\qquad \lambda(T)=\max_{0\le i\le n-1}\Delta x_i.
+\Delta x_i=x_{i+1}-x_i,\qquad \lambda(T)=\max_{0\leqslant i\leqslant n-1}\Delta x_i.
 \]
 Для набора точек $\xi_i\in[x_i,x_{i+1}]$ сумма
 \[
@@ -45,10 +45,14 @@ I=\int\limits_a^b f(x)\,dx.
 
 \end{theorem}
 
+\begin{task}
+    Докажите, что необходимое условие интегрируемости не является достаточным.
+\end{task}
+
 \section{Суммы Дарбу}
 
 \begin{definition}
-Пусть $f$ ограничена на $[a,b]$ и
+Пусть $f$ ограничена на $[a,b]$ и $ f \in R[a,b]$. Тогда для любого разбиения
 \[
 T:\quad a=x_0<x_1<\dots<x_n=b.
 \]
@@ -67,27 +71,27 @@ T:\quad a=x_0<x_1<\dots<x_n=b.
 \begin{prop}
 Для любой интегральной суммы $\sigma(T,\xi)$ выполнено
 \[
- s(T)\le \sigma(T,\xi)\le S(T) \Rightarrow s(T) - \sup \land S(T) - \inf.
+ s(T)\leqslant \sigma(T,\xi)\leqslant S(T).
 \]
 \end{prop}
 
 \begin{prop}
 Если $T' = T\cup\{x\}$ —  $T$ без точки $x$, то
 \[
-S(T')\le S(T),\qquad s(T')\ge s(T).
+S(T')\leqslant S(T),\qquad s(T')\geqslant s(T).
 \]
 \end{prop}
 
 \begin{prop}
 Для любых разбиений $T$ и $T'$ выполняется
 \[
- s(T)\le S(T').
+ s(T)\leqslant S(T').
 \]
 \end{prop}
 
 Из предыдущего свойства следует, что множества всех нижних и верхних сумм ограничены:
 \[
-\boxed{s \le \underline I \le \overline I \le S} (*)
+\boxed{s \leqslant \underline I \leqslant \overline I \leqslant S} (*)
 \]
 \[
 \underline I=\sup\{s(T)\},\qquad \overline I=\inf\{S(T)\}.
@@ -114,6 +118,7 @@ S(T)-s(T)=\sum\limits_{i=0}^{n-1}\omega_i\,\Delta x_i.
 \]
 \end{remark}
 
+
 \section{Критерий интегрируемости функции}
 
 \begin{theorem}
@@ -133,13 +138,13 @@ S(T)-s(T)=\sum\limits_{i=0}^{n-1}\omega_i\,\Delta x_i.
 \[
 |\sigma(T,\xi)-I|<\frac{\varepsilon}{2}.
 \]
-Так как $s(T)\le \sigma(T,\xi)\le S(T)$, то
+Так как $s(T)\leqslant \sigma(T,\xi)\leqslant S(T)$, то
 \[
-I-\frac{\varepsilon}{2}\le s(T)\le S(T)\le I+\frac{\varepsilon}{2}.
+I-\frac{\varepsilon}{2}\leqslant s(T)\leqslant S(T)\leqslant I+\frac{\varepsilon}{2}.
 \]
 Следовательно,
 \[
-0\le S(T)-s(T)\le \varepsilon,
+0\leqslant S(T)-s(T)\leqslant \varepsilon,
 \]
 значит $\lim_{\lambda(T)\to 0}(S(T)-s(T))=0$.
 
@@ -151,16 +156,16 @@ I-\frac{\varepsilon}{2}\le s(T)\le S(T)\le I+\frac{\varepsilon}{2}.
 \]
 Тогда по теореме Дарбу
 \[
-0\le \overline I-\underline I\le S(T)-s(T)\to 0,
+0\leqslant \overline I-\underline I\leqslant S(T)-s(T)\to 0,
 \]
 следовательно, $\underline I=\overline I=:I$.
 Из свойства Дарбу получаем
 \[
-s(T)\le I\le S(T),
+s(T)\leqslant I\leqslant S(T),
 \]
 а значит для любой интегральной суммы
 \[
-0\le |\sigma(T,\xi)-I|\le S(T)-s(T)\to 0.
+0\leqslant |\sigma(T,\xi)-I|\leqslant S(T)-s(T)\to 0.
 \]
 Следовательно, $\lim\limits_{\lambda(T)\to 0}\sigma(T,\xi)=I$, то есть $f\in R[a,b]$.
 \end{proof}
@@ -187,6 +192,26 @@ s(T)\le I\le S(T),
 Значит, эта функция не интегрируема на $[a,b]$.
 \end{example}
 
+\begin{task}
+докажите, что функция: \\
+\[
+ f(x)=\begin{cases}
+ 1, & x \geqslant 1\\
+ 0, & x < 1
+ \end{cases}
+\]
+интегрируема на $[-1;1]$ и найдите её интеграл.
+
+\end{task}
+
+\begin{task}
+Докажите, что функция
+\[
+ f(x)=|x|
+\]
+интегрируема на отрезке $[-1,1]$ с помощью критерия Дарбу.
+\end{task}
+
 \section{Классы интегрируемых функций}
 
 \begin{theorem}
@@ -201,7 +226,7 @@ s(T)\le I\le S(T),
 \]
 Тогда
 \[
-0\le S(T)-s(T)=\sum\limits_{i=0}^{n-1}\omega_i\,\Delta x_i
+0\leqslant S(T)-s(T)=\sum\limits_{i=0}^{n-1}\omega_i\,\Delta x_i
 <\sum\limits_{i=0}^{n-1}\frac{\varepsilon}{b-a}\,\Delta x_i
 =\frac{\varepsilon}{b-a}\,(b-a)=\varepsilon.
 \]
@@ -220,12 +245,12 @@ s(T)\le I\le S(T),
 \]
 поэтому
 \[
-\omega_i=M_i-m_i\le f(b)-f(a).
+\omega_i=M_i-m_i\leqslant f(b)-f(a).
 \]
 Следовательно,
 \[
 S(T)-s(T)=\sum\limits_{i=0}^{n-1}\omega_i\,\Delta x_i
-\le \bigl(f(b)-f(a)\bigr)\sum\limits_{i=0}^{n-1}\Delta x_i
+\leqslant \bigl(f(b)-f(a)\bigr)\sum\limits_{i=0}^{n-1}\Delta x_i
 =\bigl(f(b)-f(a)\bigr)(b-a).
 \]
 Для произвольного $\varepsilon>0$ выбираем разбиение с достаточно малым шагом $\lambda(T)$ так, чтобы сумма колебаний была меньше $\varepsilon$; тогда по критерию интегрируемости $f\in R[a,b]$.
