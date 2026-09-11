@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{cmap}					% поиск в PDF
+\usepackage{amsthm, amssymb, amsfonts}
+\usepackage{mathtext} 				% русские буквы в формулах
+\usepackage[T2A]{fontenc}			% кодировка
+\usepackage[utf8]{inputenc}			% кодировка исходного текста
+\usepackage[english,russian]{babel}	% локализация и переносы
+
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{tabto}
+
+\title{tester}
+\author{Nurtdinov Renat}
+\date{September 2026}
+\begin {document}
+\textbf{задача 11}.  
+\textit {Трубопровод тепловой магистрали (диаметр 20 см) защищен изоляцией толщиной 10см; величина коэффицента теплопроводности k = 0,00017. Температура трубы $160^\circ{}$; температура внешнего покрова $30^\circ{}$ (рис. 8). Найти распределение температуры внутри изоляции, а также количество тепла отдаваемого 1 погонным метром трубы.}
+
+\begin{center}
+    {Решение}
+\end{center}
+
+\text{Если тело находится в стационарном тепловом состоянии и
+температура T в каждой его точке есть функция только одной
+координаты x, то согласно закону теплопроводности Фурье количество
+теплоты, испускаемое в секунду:}
+$Q = -kF(x) \frac{dT}{dx} = const,$ \newline
+\text{где F(x) - площадь сечения тела на расстоянии x,} \newline
+
+\text{k - коэффицент теплопроводности.} \newline
+\text{Здесь} \newline
+\begin{center}
+    $F(x) = 2\pi xl$
+\end{center}
+\text{где l - длина трубы в \textit{cm},} \newline
+\text{x - радиус трубопровода в \textit{см}.}
+\text{Таким образом, после разделения переменных
+дифференциальное уравнение задачи примет вид:} \newline
+
+\begin{center}
+$dT = - \frac{Q}{kF(x)}dx = -\frac{Q}{k*2\pi l} \frac{dx}{x}.$    
+\end{center}
+
+\text{интегрируя обе части равенства (3), находим:} \newline
+\[
+\begin{rcases}
+\text{a)} \int\limits_{160}^{30} dT = - \frac{Q}{0,00017* 2\pi l} \int\limits_{10}^{20}\frac{dx}{x}, \\
+\text{б)} \int\limits_{160}^{T} dT = - \frac{Q}{0,00017* 2\pi l} \int\limits_{10}^{x}\frac{dx}{x},
+\end{rcases}
+\]
+\text{или}
+\[
+a) \\
+T \int\limits^{30}_{160}
+\]
+
+
+
+\end{document}
+\begin{document}
+
+
+
+\section{Introduction}
+
+\end{document}
